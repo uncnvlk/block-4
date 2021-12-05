@@ -24,6 +24,7 @@ class FriendsViewController: UIViewController {
     
     let friendsDB = FriendsDB()
     
+    //var friends: Results<FriendModels>?
     var friends: Results<FriendModels>?
     var token: NotificationToken?
     
@@ -36,42 +37,19 @@ class FriendsViewController: UIViewController {
         tableView.tableHeaderView = searchController.searchBar
         searchController.searchResultsUpdater = self
         
-        friendsService.getFriends{ [weak self] friends in
-            guard let self = self else {return}
-            
-            let friendsOld = self.friendsDB.load()
-            friendsOld.forEach {
-                self.friendsDB.delete($0)
-            }
-            
-            self.friendsDB.save(friends)
-            self.friends = self.friendsDB.load()
-            
-            self.token = self.friends?.observe { [weak self] changes in
-            
-                guard let self = self else { return }
+        //Operation queue results
+        let operationsQueue = OperationQueue.main
+        let getFriends = GetDataFromURL()
+        let parseFriends = ParseData()
+        let showFriends = PresentFriends(controller: self)
 
-                    switch changes {
-                    case .initial:
-                        self.tableView.reloadData()
-                    case .update(_, let deletions, let insertions, let modifications):
-                        self.tableView.beginUpdates()
-                        self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-                        self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
-                        self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
-                        self.tableView.endUpdates()
-                    case .error(let error):
-                        fatalError("\(error)")
-                    }
-                }
-            
-            
-//            self?.FriendItem = friends
-//            self?.tableView.reloadData()
-        }
-        
-        
+        parseFriends.addDependency(getFriends)
+        showFriends.addDependency(parseFriends)
+
+        let operations = [getFriends, parseFriends, showFriends]
+        operationsQueue.addOperations(operations, waitUntilFinished: false)
     }
+}
     
 //    private func getData() {
 //        friendsService.getFriends{ [weak self] friends in
@@ -79,8 +57,6 @@ class FriendsViewController: UIViewController {
 //            self?.tableView.reloadData()
 //        }
 //    }
-}
-
 extension FriendsViewController: UITableViewDataSource {
     
     

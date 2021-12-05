@@ -7,16 +7,21 @@
 
 import UIKit
 import Alamofire
-
+import Realm
 
 
 class NewsController: UIViewController {
 
     
     @IBOutlet weak var NewsTableView: UITableView!
-    let newsService = NewsAPI()
     
-    var news: [NewModels] = []
+    
+    private let newsService = NewsAPI()
+    
+    
+    private var news: [NewModels] = []
+    private var groups: [GroupsNews] = []
+    private var profiles: [ProfileModels] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +30,15 @@ class NewsController: UIViewController {
         self.NewsTableView.register(R.Nib.newAuthorandDate, forCellReuseIdentifier: R.Cell.newAuthorandDate)
         self.NewsTableView.register(R.Nib.newLikesandComments, forCellReuseIdentifier: R.Cell.newLikesandComments)
         
-        newsService.getNews { [weak self] news in
-            self?.news = news
-            self?.NewsTableView.reloadData()
+        newsService.getNews { [weak self] news, groups, profiles in
+            guard let self = self else {return}
+
+//            self.feeds = feeds
+            self.news = news
+            self.groups = groups
+            self.profiles = profiles
+
+            self.NewsTableView.reloadData()
         }
     }
 }
@@ -60,7 +71,7 @@ extension NewsController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if self.news.count == 0 {
-                    (cell as? NewTextTableViewCell)?.configure(postTextFromVK: "testtesttest")
+                    (cell as? NewTextTableViewCell)?.configure(postTextFromVK: "test")
                     } else {
                         (cell as? NewTextTableViewCell)?.configure(postTextFromVK: self.news[0].text)
                         }

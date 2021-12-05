@@ -16,6 +16,9 @@
 		AD120E2526F37180000BE9E1 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */; };
 		AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */; };
 		AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39B2726A08500D6EB69 /* GroupAPI.swift */; };
+		AD31F0A2275D2E68001F397D /* ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A1275D2E68001F397D /* ParseData.swift */; };
+		AD31F0A4275D2EE4001F397D /* PresentSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A3275D2EE4001F397D /* PresentSwift.swift */; };
+		AD31F0A6275D2F80001F397D /* getDataFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A5275D2F80001F397D /* getDataFromURL.swift */; };
 		AD3F7CC2273933D6001CCF4F /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F7CC1273933D6001CCF4F /* FriendsDB.swift */; };
 		AD586C78272C09F800B9F9CC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = AD586C77272C09F800B9F9CC /* Realm */; };
 		AD586C7A272C09F800B9F9CC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD586C79272C09F800B9F9CC /* RealmSwift */; };
@@ -65,6 +68,9 @@
 		AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		AD21E39B2726A08500D6EB69 /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
+		AD31F0A1275D2E68001F397D /* ParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseData.swift; sourceTree = "<group>"; };
+		AD31F0A3275D2EE4001F397D /* PresentSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentSwift.swift; sourceTree = "<group>"; };
+		AD31F0A5275D2F80001F397D /* getDataFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDataFromURL.swift; sourceTree = "<group>"; };
 		AD3F7CC1273933D6001CCF4F /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
 		AD586C7B272C129D00B9F9CC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		AD7C8F8226EF55380067D012 /* 2l_SidorenkovaLiza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2l_SidorenkovaLiza.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +134,16 @@
 				AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		AD31F0A0275D2C0F001F397D /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				AD31F0A1275D2E68001F397D /* ParseData.swift */,
+				AD31F0A3275D2EE4001F397D /* PresentSwift.swift */,
+				AD31F0A5275D2F80001F397D /* getDataFromURL.swift */,
+			);
+			path = Operation;
 			sourceTree = "<group>";
 		};
 		AD7C8F7926EF55380067D012 = {
@@ -225,6 +241,7 @@
 		ADBD744D272AB4CE00E15D24 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				AD31F0A0275D2C0F001F397D /* Operation */,
 				ADBD7449272AB41000E15D24 /* Models */,
 			);
 			path = Friends;
@@ -404,6 +421,7 @@
 				ADBD7456272AC4D300E15D24 /* Group.swift in Sources */,
 				ADDFBDC626FF725900EDC48D /* NewsController.swift in Sources */,
 				AD7C8F8A26EF55380067D012 /* ViewController.swift in Sources */,
+				AD31F0A2275D2E68001F397D /* ParseData.swift in Sources */,
 				AD8DCCB82725CA3400431435 /* FriendsAPI.swift in Sources */,
 				ADBD7453272AC49E00E15D24 /* GroupTableViewController..swift in Sources */,
 				AD0F422F2742A5AB0078E088 /* FirebaseUser.swift in Sources */,
@@ -412,9 +430,11 @@
 				ADC4E84A275250FD00659E10 /* NewTextTableViewCell.swift in Sources */,
 				AD7C8FA826EF72320067D012 /* R.swift in Sources */,
 				AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */,
+				AD31F0A4275D2EE4001F397D /* PresentSwift.swift in Sources */,
 				AD8DCCB22725B45600431435 /* AuthViewController.swift in Sources */,
 				AD3F7CC2273933D6001CCF4F /* FriendsDB.swift in Sources */,
 				AD7C8F8826EF55380067D012 /* SceneDelegate.swift in Sources */,
+				AD31F0A6275D2F80001F397D /* getDataFromURL.swift in Sources */,
 				ADA60969271DBCA500F23066 /* Account.swift in Sources */,
 				AD8DCCB42725C63700431435 /* Session.swift in Sources */,
 				AD120E1E26F36FF4000BE9E1 /* FriendsViewController.swift in Sources */,

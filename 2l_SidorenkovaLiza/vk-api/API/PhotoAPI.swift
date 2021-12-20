@@ -23,7 +23,7 @@ final class PhotosAPI {
     
     
     
-    func getPhotos(completion: @escaping ([Photos])->()) {
+    private func getPhotos(completion: @escaping ([Photos])->()) {
         let method = "photos.getAll"
         
         let parameters: Parameters  = [

@@ -17,15 +17,15 @@ class FriendsViewController: UIViewController {
     
     private var SearchFriendItem: [FriendModels] = []
     
-    let friendsService = FriendsAPI()
-    let photosService = PhotosAPI()
-    let groupsService = GroupsAPI()
+    private let friendsService = FriendsAPI()
+    private let photosService = PhotosAPI()
+    private let groupsService = GroupsAPI()
     
-    let friendsDB = FriendsDB()
+    private let friendsDB = FriendsDB()
     
     //var friends: Results<FriendModels>?
-    var friends: Results<FriendModels>?
-    var token: NotificationToken?
+    private var friends: Results<FriendModels>?
+    private var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()

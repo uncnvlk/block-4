@@ -16,7 +16,7 @@ final class FriendsAPI {
     let userId = Session.shared.userID
     let version = "5.81"
     
-    func getFriends(completion: @escaping ([FriendModels])->()) {
+    private func getFriends(completion: @escaping ([FriendModels])->()) {
         let method = "friends.get"
         
         let parameters: Parameters  = [

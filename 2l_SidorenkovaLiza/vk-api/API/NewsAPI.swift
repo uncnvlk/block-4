@@ -15,7 +15,7 @@ final class NewsAPI {
     
     
     
-    func getNews(completion: @escaping ([NewModels],[GroupsNews], [ProfileModels])->()) {
+    private func getNews(completion: @escaping ([NewModels],[GroupsNews], [ProfileModels])->()) {
         let method = "newsfeed.get"
         
         let parameters: Parameters  = [

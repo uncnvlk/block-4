@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class PresentFriends: Operation {
-    var controllerToPresent: FriendsViewController
+    private var controllerToPresent: FriendsViewController
 
     private let friendDB = FriendsDB()
 

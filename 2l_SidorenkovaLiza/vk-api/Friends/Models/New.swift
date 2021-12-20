@@ -1,22 +1,8 @@
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
-//
-//   let news = try? newJSONDecoder().decode(News.self, from: jsonData)
 
 import Foundation
 
-////MARK: - Response
-//struct ResponseN: Codable {
-//    let items: [Item]
-//    let groups: [Group]
-//    let profiles: [Profile]
-//    let nextFrom: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case items, groups, profiles
-//        case nextFrom = "next_from"
-//    }
-//}
 
 // MARK: - Group
 struct GroupsNews: Codable {
@@ -72,108 +58,7 @@ struct NewModels: Codable {
     }
 }
 
-// MARK: - Attachment
-//struct Attachment: Codable {
-//    let type: String
-//    let photo: Photo?
-//    let video: Video?
-//}
-//
-//// MARK: - Photo
-//struct Photo: Codable {
-//    let albumID, postID, id, date: Int
-//    let text: String
-//    let userID: Int
-//    let sizes: [Size]
-//    let hasTags: Bool
-//    let ownerID: Int
-//    let accessKey: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case albumID = "album_id"
-//        case postID = "post_id"
-//        case id, date, text
-//        case userID = "user_id"
-//        case sizes
-//        case hasTags = "has_tags"
-//        case ownerID = "owner_id"
-//        case accessKey = "access_key"
-//    }
-//}
-//
-//// MARK: - Size
-//struct Size: Codable {
-//    let width, height: Int
-//    let url: String
-//    let type: String
-//}
-//
-//// MARK: - Video
-//struct Video: Codable {
-//    let firstFrame800: String
-//    let ownerID, canAdd, duration: Int
-//    let photo320, photo1280, firstFrame1280: String
-//    let title: String
-//    let views, canLike, canComment: Int
-//    let firstFrame130: String
-//    let date: Int
-//    let firstFrame160: String
-//    let id, height: Int
-//    let trackCode: String
-//    let width, canAddToFaves: Int
-//    let accessKey: String
-//    let comments: Int
-//    let photo800, photo130: String
-//    let canSubscribe: Int
-//    let firstFrame320: String
-//    let canRepost: Int
-//    let videoDescription: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case firstFrame800 = "first_frame_800"
-//        case ownerID = "owner_id"
-//        case canAdd = "can_add"
-//        case duration
-//        case photo320 = "photo_320"
-//        case photo1280 = "photo_1280"
-//        case firstFrame1280 = "first_frame_1280"
-//        case title, views
-//        case canLike = "can_like"
-//        case canComment = "can_comment"
-//        case firstFrame130 = "first_frame_130"
-//        case date
-//        case firstFrame160 = "first_frame_160"
-//        case id, height
-//        case trackCode = "track_code"
-//        case width
-//        case canAddToFaves = "can_add_to_faves"
-//        case accessKey = "access_key"
-//        case comments
-//        case photo800 = "photo_800"
-//        case photo130 = "photo_130"
-//        case canSubscribe = "can_subscribe"
-//        case firstFrame320 = "first_frame_320"
-//        case canRepost = "can_repost"
-//        case videoDescription = "description"
-//    }
-//}
-//
-//// MARK: - Comments
-//struct Comments: Codable {
-//    let count: Int
-//}
-//
-//// MARK: - Likes
-//struct Likes: Codable {
-//    let count, canLike, userLikes: Int
-//
-//    enum CodingKeys: String, CodingKey {
-//        case count
-//        case canLike = "can_like"
-//        case userLikes = "user_likes"
-//    }
-//}
-//
+
 //// MARK: - Profile
 struct ProfileModels: Codable {
     let online, id: Int

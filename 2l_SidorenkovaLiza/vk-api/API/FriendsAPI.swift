@@ -16,8 +16,6 @@ final class FriendsAPI {
     let userId = Session.shared.userID
     let version = "5.81"
     
-    //let newsJSON = try? newJSONDecoder().decode(FriendsJSON.self, from: jsonData)
-    
     func getFriends(completion: @escaping ([FriendModels])->()) {
         let method = "friends.get"
         
@@ -34,9 +32,6 @@ final class FriendsAPI {
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
             guard let data = response.data else { return }
-            //debugPrint(response.data?.prettyJSON)
-            
-            //print(response.value)
             
             do {
                 

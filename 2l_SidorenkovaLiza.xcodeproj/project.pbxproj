@@ -16,6 +16,8 @@
 		AD120E2526F37180000BE9E1 /* BasicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */; };
 		AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */; };
 		AD21E39C2726A08500D6EB69 /* GroupAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21E39B2726A08500D6EB69 /* GroupAPI.swift */; };
+		AD22EE432770CA56000F5803 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD22EE422770CA56000F5803 /* PromiseKit */; };
+		AD22EE452770CE1E000F5803 /* GroupsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD22EE442770CE1E000F5803 /* GroupsDB.swift */; };
 		AD31F0A2275D2E68001F397D /* ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A1275D2E68001F397D /* ParseData.swift */; };
 		AD31F0A4275D2EE4001F397D /* PresentSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A3275D2EE4001F397D /* PresentSwift.swift */; };
 		AD31F0A6275D2F80001F397D /* getDataFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD31F0A5275D2F80001F397D /* getDataFromURL.swift */; };
@@ -68,6 +70,7 @@
 		AD120E2326F37180000BE9E1 /* BasicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicTableViewCell.xib; sourceTree = "<group>"; };
 		AD21E39927269FFD00D6EB69 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		AD21E39B2726A08500D6EB69 /* GroupAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAPI.swift; sourceTree = "<group>"; };
+		AD22EE442770CE1E000F5803 /* GroupsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsDB.swift; sourceTree = "<group>"; };
 		AD31F0A1275D2E68001F397D /* ParseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseData.swift; sourceTree = "<group>"; };
 		AD31F0A3275D2EE4001F397D /* PresentSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentSwift.swift; sourceTree = "<group>"; };
 		AD31F0A5275D2F80001F397D /* getDataFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDataFromURL.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 				AD586C7A272C09F800B9F9CC /* RealmSwift in Frameworks */,
 				AD586C78272C09F800B9F9CC /* Realm in Frameworks */,
 				AD8DCCAC2725B3A600431435 /* Alamofire in Frameworks */,
+				AD22EE432770CA56000F5803 /* PromiseKit in Frameworks */,
 				AD0F422B2742A4EB0078E088 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +206,7 @@
 			children = (
 				AD3F7CC1273933D6001CCF4F /* FriendsDB.swift */,
 				AD7C8FA726EF72320067D012 /* R.swift */,
+				AD22EE442770CE1E000F5803 /* GroupsDB.swift */,
 				ADA60968271DBCA500F23066 /* Account.swift */,
 				AD8DCCB32725C63600431435 /* Session.swift */,
 			);
@@ -347,6 +352,7 @@
 				AD0F422A2742A4EB0078E088 /* FirebaseAuth */,
 				AD0F422C2742A4EB0078E088 /* FirebaseDatabase */,
 				ADB293E62746B45300759663 /* SwiftyJSON */,
+				AD22EE422770CA56000F5803 /* PromiseKit */,
 			);
 			productName = 2l_SidorenkovaLiza;
 			productReference = AD7C8F8226EF55380067D012 /* 2l_SidorenkovaLiza.app */;
@@ -380,6 +386,7 @@
 				AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				AD0F42292742A4EB0078E088 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				ADB293E52746B45300759663 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				AD22EE412770CA56000F5803 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = AD7C8F8326EF55380067D012 /* Products */;
 			projectDirPath = "";
@@ -446,6 +453,7 @@
 				AD21E39A27269FFD00D6EB69 /* PhotoAPI.swift in Sources */,
 				AD586C7C272C129D00B9F9CC /* Photo.swift in Sources */,
 				ADBD7448272AACAB00E15D24 /* Data+PrettyJSON.swift in Sources */,
+				AD22EE452770CE1E000F5803 /* GroupsDB.swift in Sources */,
 				ADC4E84E2752511F00659E10 /* NewImageTableViewCell.swift in Sources */,
 				ADC4E8562752517D00659E10 /* NewLikesandCommentsTableViewCell.swift in Sources */,
 				ADDFBDCA26FF73BC00EDC48D /* NewsTableViewCell.swift in Sources */,
@@ -659,6 +667,14 @@
 				minimumVersion = 8.9.1;
 			};
 		};
+		AD22EE412770CA56000F5803 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.16.2;
+			};
+		};
 		AD586C76272C09F800B9F9CC /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -695,6 +711,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD0F42292742A4EB0078E088 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		AD22EE422770CA56000F5803 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD22EE412770CA56000F5803 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 		AD586C77272C09F800B9F9CC /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

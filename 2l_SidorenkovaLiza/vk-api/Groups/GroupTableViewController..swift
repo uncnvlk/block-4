@@ -6,63 +6,53 @@
 //
 
 import UIKit
-//import Firebase
+import PromiseKit
+import RealmSwift
 
 class GroupTableViewController: UITableViewController {
 
         let friendsService = FriendsAPI()
         let photosService = PhotosAPI()
         let groupsService = GroupsAPI()
-
-        var groups: [GroupModels] = []
+        let groupDB = GroupsDB()
     
-//        let ref = Database.database().reference(withPath: "Groups")
+        var groups: Results <GroupModels>?
+    
     
         override func viewDidLoad() {
             super.viewDidLoad()
 
             tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
             
-            
-            groupsService.getGroups { groups in
-                self.groups = groups
-                self.tableView.reloadData()
-            }
-            
-            /*photosService.getPhotos { photos in
-                print("Получили фото в контроллере")
-            }
-            
-            groupsService.getGroup { groups in
-                print("Получили список групп в контроллере")
-            }
-            
-            
-            groupsService.getSearchGroup { searchGroups in
-                print("Получили поиск группы в контроллере")
-            }*/
+            firstly {
+                        groupsService.getGroups()
+                    } .done { groups in
+                        let groupsOld = self.groupDB.load()
+
+                        groupsOld.forEach {
+                            self.groupDB.delete($0)
+                        }
+
+                        self.groupDB.save(groups)
+                        self.groups = self.groupDB.load()
+                    } .catch { error in
+                        print(error)
+                    }
             
         }
 
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             // #warning Incomplete implementation, return the number of rows
-            return groups.count
+            guard groups != nil else { return 0 }
+                return self.groups!.count
         }
 
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            let group = groups[indexPath.row]
-            cell.textLabel?.text = group.name
+            let group = groups?[indexPath.row]
+            cell.textLabel?.text = group?.name
 
-            
-//            let userId = Session.shared.userID
-//            var groupsMas: [String] = []
-//            self.groups.forEach {
-//            groupsMas.append($0.name)
-//            }
-//            let firebaseUser = FirebaseUser(id: String(userId), groups: groupsMas)
-//            ref.setValue(firebaseUser.toAnyObject)
             
             return cell
         }

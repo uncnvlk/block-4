@@ -30,7 +30,6 @@ final class NewsAPI {
         AF.request(url, method: .get, parameters: parameters).responseJSON  { response in
                     
                     guard let data = response.data else { return }
-                    //debugPrint(response.data?.prettyJSON as Any)
                     
                     let decoder = JSONDecoder()
                     let json = JSON(data)
@@ -93,11 +92,7 @@ final class NewsAPI {
                     }
                     
                     dispatchGroup.notify(queue: DispatchQueue.main) {
-        //                let response = FeedResponse(items: vkNewsArray,
-        //                                            groups: vkGroupsArray,
-        //                                            profiles: vkProfilesArray,
-        //                                            nextFrom: "123")
-                        
+
                         completion(vkNewsArray, vkGroupsArray, vkProfilesArray)
                     }
                     

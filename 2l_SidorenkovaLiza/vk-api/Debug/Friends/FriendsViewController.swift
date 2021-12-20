@@ -14,7 +14,6 @@ class FriendsViewController: UIViewController {
     
     private var searchController: UISearchController!
     
-    //private var FriendItem: [FriendModels] = []
     
     private var SearchFriendItem: [FriendModels] = []
     
@@ -51,12 +50,7 @@ class FriendsViewController: UIViewController {
     }
 }
     
-//    private func getData() {
-//        friendsService.getFriends{ [weak self] friends in
-//            self?.friends = friends
-//            self?.tableView.reloadData()
-//        }
-//    }
+
 extension FriendsViewController: UITableViewDataSource {
     
     

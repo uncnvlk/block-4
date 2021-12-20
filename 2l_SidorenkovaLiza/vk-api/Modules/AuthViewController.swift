@@ -32,7 +32,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
                     URLQueryItem(name: "client_id", value: "7983960"),
                     URLQueryItem(name: "display", value: "mobile"),
                     URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-//                    URLQueryItem(name: "scope", value: "262150"),
                     URLQueryItem(name: "scope", value: "wall, friends, groups"),
                     URLQueryItem(name: "response_type", value: "token"),
                     URLQueryItem(name: "v", value: "5.81")
@@ -66,9 +65,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         guard let token = params["access_token"], let userId = params["user_id"] else {return}
             
             print(token)
-        
-//        let firebaseUser = FirebaseUser(id: userId)
-//        self.ref.setValue(firebaseUser.toAnyObject())
         
         Session.shared.token = token
         Session.shared.userID = userId

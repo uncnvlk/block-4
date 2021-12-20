@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import PromiseKit
 
 
 final class GroupsAPI {
@@ -16,7 +17,8 @@ final class GroupsAPI {
     let userId = Session.shared.userID
     let version = "5.81"
     
-    func getGroups(completion: @escaping ([GroupModels])->()) {
+    func getGroups()-> Promise <[GroupModels]>{
+        return Promise <[GroupModels]> {resolver in
         let method = "groups.get"
         
         let parameters: Parameters  = [
@@ -29,20 +31,21 @@ final class GroupsAPI {
         let url = baseURL + method
         AF.request(url, method: .get, parameters: parameters).responseJSON { response in
             
-            guard let data = response.data else { return }
-            //debugPrint(response.data?.prettyJSON)
-        
-            do {
-                
-                let groupsJSON = try JSONDecoder().decode(GroupsJSON.self, from: data)
-                
-                let groups = groupsJSON.response.items
-                completion(groups)
-                
-            } catch {
-                print(error)
+            if let error = response.error {resolver.reject(error)}
+            if let data = response.data {
+                do {
+                    
+                    let groupsJSON = try JSONDecoder().decode([GroupModels].self, from: data)
+                    resolver.fulfill(groupsJSON)
+                    //let groups = groupsJSON.response.items
+                } catch {
+                    print(error)
+                }
             }
+        
+            
         }
+    }
     }
     
     func getSearchGroup(completion: @escaping ([GroupModels])->()) {

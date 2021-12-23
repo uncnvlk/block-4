@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JeK-uC-Dtp" kind="relationship" relationship="rootViewController" id="9HR-9i-5sq"/>
+                        <segue destination="HJG-fG-zxM" kind="relationship" relationship="rootViewController" id="oce-v7-8Od"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dxa-8u-zzw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -76,14 +76,14 @@
             <point key="canvasLocation" x="-2072" y="852"/>
         </scene>
         <!--News-->
-        <scene sceneID="L8c-tn-F9i">
+        <scene sceneID="8uU-7c-L9N">
             <objects>
-                <viewControllerPlaceholder storyboardName="News" id="JeK-uC-Dtp" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="gpg-f6-Ko9"/>
+                <viewControllerPlaceholder storyboardIdentifier="News" storyboardName="News" id="HJG-fG-zxM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="L3Z-AG-61H"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D3V-8g-Ccx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vro-BV-FrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2069" y="1244"/>
+            <point key="canvasLocation" x="-2072" y="1216"/>
         </scene>
         <!--Friends-->
         <scene sceneID="y29-fc-baW">

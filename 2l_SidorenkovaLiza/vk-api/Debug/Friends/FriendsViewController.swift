@@ -12,20 +12,20 @@ class FriendsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var searchController: UISearchController!
+    var searchController: UISearchController!
     
     
-    private var SearchFriendItem: [FriendModels] = []
+    var SearchFriendItem: [FriendModels] = []
     
-    private let friendsService = FriendsAPI()
-    private let photosService = PhotosAPI()
-    private let groupsService = GroupsAPI()
+    let friendsService = FriendsAPI()
+    let photosService = PhotosAPI()
+    let groupsService = GroupsAPI()
     
-    private let friendsDB = FriendsDB()
+    let friendsDB = FriendsDB()
     
     //var friends: Results<FriendModels>?
-    private var friends: Results<FriendModels>?
-    private var token: NotificationToken?
+    var friends: Results<FriendModels>?
+    var token: NotificationToken?
     
     override func viewDidLoad() {
         super.viewDidLoad()

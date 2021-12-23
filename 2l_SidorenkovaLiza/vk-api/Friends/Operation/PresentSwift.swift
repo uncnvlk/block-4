@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class PresentFriends: Operation {
-    private var controllerToPresent: FriendsViewController
+    var controllerToPresent: FriendsViewController
 
-    private let friendDB = FriendsDB()
+    let friendDB = FriendsDB()
 
     override func main() {
         guard let parsedData = dependencies.first as? ParseData,

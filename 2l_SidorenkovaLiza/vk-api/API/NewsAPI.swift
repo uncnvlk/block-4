@@ -13,8 +13,6 @@ final class NewsAPI {
     
     let news: [NewsModels] = []
     
-    
-    
     func getNews(completion: @escaping ([NewsModels],[GroupsNews], [ProfileModel])->()) {
         let method = "newsfeed.get"
         

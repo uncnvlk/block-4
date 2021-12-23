@@ -125,7 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="table" destination="klI-kU-Cwm" id="KEl-Wi-0wN"/>
-                        <outlet property="tableView" destination="klI-kU-Cwm" id="CrZ-q1-UJU"/>
+                        <outlet property="tableView" destination="klI-kU-Cwm" id="PdN-8a-d0i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

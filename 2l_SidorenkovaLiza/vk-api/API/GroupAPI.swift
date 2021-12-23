@@ -17,7 +17,7 @@ final class GroupsAPI {
     let userId = Session.shared.userID
     let version = "5.81"
     
-    private func getGroups()-> Promise <[GroupModels]>{
+    func getGroups()-> Promise <[GroupModels]>{
         return Promise <[GroupModels]> {resolver in
         let method = "groups.get"
         
@@ -48,7 +48,7 @@ final class GroupsAPI {
     }
     }
     
-    private func getSearchGroup(completion: @escaping ([GroupModels])->()) {
+    func getSearchGroup(completion: @escaping ([GroupModels])->()) {
         let method = "group.search"
         
         let parameters: Parameters  = [

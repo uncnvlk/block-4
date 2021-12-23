@@ -2,17 +2,21 @@
 //  NewsTableViewCell.swift
 //  2l_SidorenkovaLiza
 //
-//  Created by Elizaveta Sidorenkova on 25.09.2021.
+//  Created by Elizaveta Sidorenkova on 23.12.2021.
 //
 
 import UIKit
 
-class NewsTableViewCell: UITableViewCell {
+class NewsTableViewCell: UITableViewCell  {
 
-    @IBOutlet weak var newsLabel: UILabel!
+    @IBOutlet weak var author: UILabel!
     
-    func configure(with item: NewModels) {
-            self.newsLabel.text = item.text
-    }
+    @IBOutlet weak var date: UILabel!
     
+    @IBOutlet weak var postText: UILabel!
+    
+    @IBOutlet weak var postImage: UIImageView!
+    
+    @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var likes: UILabel!
 }

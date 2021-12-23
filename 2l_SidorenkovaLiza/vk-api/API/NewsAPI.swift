@@ -11,11 +11,9 @@ final class NewsAPI {
     let userId = Session.shared.userID
     let version = "5.81"
     
-    let news: [NewModels] = []
+    let news: [NewsModels] = []
     
-    
-    
-    private func getNews(completion: @escaping ([NewModels],[GroupsNews], [ProfileModels])->()) {
+    func getNews(completion: @escaping ([NewsModels],[GroupsNews], [ProfileModel])->()) {
         let method = "newsfeed.get"
         
         let parameters: Parameters  = [
@@ -39,8 +37,8 @@ final class NewsAPI {
                     let vkProfilesJSONArr = json["response"]["profiles"].arrayValue
                     let vkGroupsJSONArr = json["response"]["groups"].arrayValue
                     
-                    var vkNewsArray: [NewModels] = []
-                    var vkProfilesArray: [ProfileModels] = []
+                    var vkNewsArray: [NewsModels] = []
+                    var vkProfilesArray: [ProfileModel] = []
                     var vkGroupsArray: [GroupsNews] = []
                     
                     //News
@@ -50,7 +48,7 @@ final class NewsAPI {
                             
                             do {
 
-                                let decodedItem = try decoder.decode(NewModels.self, from: items.rawData())
+                                let decodedItem = try decoder.decode(NewsModels.self, from: items.rawData())
                                 vkNewsArray.append(decodedItem)
                                 
                             } catch (let errorDecode) {
@@ -66,7 +64,7 @@ final class NewsAPI {
                             
                             do {
 
-                                let decodedItem = try decoder.decode(ProfileModels.self, from: profiles.rawData())
+                                let decodedItem = try decoder.decode(ProfileModel.self, from: profiles.rawData())
                                 vkProfilesArray.append(decodedItem)
                                 
                             } catch (let errorDecode) {
